@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: hsl(223, 87%, 63%);
+    --paleBlue: hsl(223, 100%, 88%);
+    --lightRed: hsl(354, 100%, 66%);
+    --gray: hsl(0, 0%, 59%);
+    --darkBlue: hsl(209, 33%, 12%);
+}
+
+body {
+    font-family: 'Libre Franklin',
+        sans-serif;
+    font-weight: 300;
+    font-size: 0.8125rem;
+    background: hsl(223, 100%, 99%);
+}
+
+/*=====================
+    Typography
+=====================*/
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.color-d {
+    color: var(--darkBlue);
+}
+
+/* call to action paragraph */
+.cta__text {
+    margin-bottom: 1em;
+    font-size: 1.125rem;
+    color: var(--gray);
+}
+
+/* email input */
+.subscription__email {
+    background: inherit;
+    padding: 0.8em 2em;
+    margin-bottom: 1em;
+    width: 100%;
+    border: 1px solid var(--paleBlue);
+    border-radius: 25px;
+}
+
+.subscription__email ::placeholder {
+    color: var(--paleBlue);
+}
+
+.subscription__email:focus {
+    outline: none;
+}
+
+/* error text */
+.subscription__form--err::after {
+    content: 'Please provide a valid email address';
+    display: block;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    font-size: 0.5625rem;
+    font-style: italic;
+    color: var(--lightRed);
+}
+
+.subscription__form--err .subscription__email {
+    margin-bottom: 2.25em;
+    border-color: var(--lightRed);
+}
+
+/* subscription form button */
+.button {
+    border-radius: 25px;
+    padding: 0.85em 0;
+    width: 100%;
+    border: none;
+    background: var(--blue);
+    color: white;
+    box-shadow: 0 4px 8px rgba(109, 109, 109, 0.486);
+}
+
+.button:hover {
+    background: hsl(223, 78%, 57%);
+}
+
+.social {
+    border: 1px solid red;
+}
+
+/* copyright text */
+.copyright {
+    margin-bottom: 3em;
+    font-size: 0.6875rem;
+    color: var(--gray);
+}
+
+/* width of 320px and up*/
+@media screen and (min-width: 20em) {
+    body {
+        font-size: 0.9375rem
+    }
+
+    .cta__text {
+        font-size: 1.25rem;
+    }
+
+    .copyright {
+        font-size: 0.8125rem;
+    }
+
+    .subscription__form--err::after {
+        font-size: 0.6875rem;
+    }
+}
+
+/*===================
+    Layout
+=====================*/
+
+/* content container */
+.container {
+    padding-top: 4.5em;
+    margin: 0 auto;
+    width: calc(100% - 4em);
+    text-align: center;
+}
+
+/* dashboard image */
+.dashboard {
+    width: 100%;
+    margin-bottom: 8.5em;
+}
+
+/* site logo */
+.logo {
+    width: 4.375em;
+    margin-bottom: 2.5em;
+}
+
+/* call to action container*/
+.cta {
+    margin-bottom: 1.5em;
+}
+
+/* subscription form container */
+.subscription {
+    padding: 0 0.5em;
+    margin-bottom: 4.5em;
+    position: relative;
+}
+
+/* social media links*/
+.social {
+    height: 2.1875em;
+    margin-bottom: 1.9em;
+}
+
+/* width of 320px and up*/
+@media screen and (min-width: 20em) {
+    container {
+        width: calc(100% - 5em);
+    }
+}
