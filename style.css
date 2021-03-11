@@ -140,6 +140,7 @@ body {
     /* error text */
     .subscription__form--err::after {
         font-size: 0.6875rem;
+        width: 90%;
     }
 
     .subscription__form--err .subscription__email {
