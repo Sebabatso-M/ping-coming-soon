@@ -105,6 +105,10 @@ body {
     background: hsla(223, 87%, 63%, 0.856);
 }
 
+.button:focus{
+    outline: none;
+}
+
 .social {
     border: 1px solid red;
 }
