@@ -123,6 +123,18 @@ body {
     }
 }
 
+/* width of 600px and up */
+@media screen and (min-width:37.5em) {
+
+    .subscription__email{
+        width: 73%;
+    }
+
+    .button{
+        width: 23%;
+    }
+}
+
 /*===================
     Layout
 =====================*/
@@ -167,7 +179,22 @@ body {
 
 /* width of 320px and up*/
 @media screen and (min-width: 20em) {
-    container {
+    .container {
         width: calc(100% - 5em);
+    }
+}
+
+/* width of 600px and up */
+@media screen and (min-width:37.5em) {
+
+    .container {
+        width: calc(100% - 6.5em);
+    }
+
+    .--flex{
+        border: 1px solid blue;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
