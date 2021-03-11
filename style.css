@@ -67,7 +67,7 @@ body {
     display: block;
     position: absolute;
     top: 3rem;
-    left: 0;
+    left: 2rem;
     font-size: 0.5625rem;
     font-style: italic;
     color: var(--lightRed);
@@ -87,10 +87,11 @@ body {
     background: var(--blue);
     color: white;
     box-shadow: 0 4px 8px rgba(109, 109, 109, 0.486);
+    cursor: pointer;
 }
 
 .button:hover {
-    background: hsl(223, 78%, 57%);
+    background: hsla(223, 87%, 63%, 0.856);
 }
 
 .social {
@@ -106,18 +107,22 @@ body {
 
 /* width of 320px and up*/
 @media screen and (min-width: 20em) {
+
     body {
         font-size: 0.9375rem
     }
 
+    /* call to action paragraph */
     .cta__text {
         font-size: 1.25rem;
     }
 
+    /* copyright text */
     .copyright {
         font-size: 0.8125rem;
     }
 
+    /* error text */
     .subscription__form--err::after {
         font-size: 0.6875rem;
     }
@@ -126,12 +131,43 @@ body {
 /* width of 600px and up */
 @media screen and (min-width:37.5em) {
 
-    .subscription__email{
+    /* email input */
+    .subscription__email {
+        margin: 0;
         width: 73%;
     }
 
-    .button{
+    /* subscription form button */
+    .button {
         width: 23%;
+    }
+
+    /* error text */
+    .subscription__form--err --mt-2em {
+        margin-top: 2rem;
+    }
+
+    .subscription__form--err .subscription__email {
+        margin-bottom: 0;
+    }
+
+}
+
+/* width of 768px and up */
+@media screen and (min-width:48em) {
+
+    /* call to action paragraph */
+    .cta__text {
+        font-size: 1.5625rem;
+    }
+}
+
+/* width of 900px and up */
+@media screen and (min-width:56.25em) {
+
+    /* call to action paragraph */
+    .cta__text {
+        font-size: 2rem;
     }
 }
 
@@ -149,7 +185,7 @@ body {
 
 /* dashboard image */
 .dashboard {
-    width: 100%;
+    max-width: 100%;
     margin-bottom: 8.5em;
 }
 
@@ -161,7 +197,7 @@ body {
 
 /* call to action container*/
 .cta {
-    margin-bottom: 1.5em;
+    margin-bottom: 2.5em;
 }
 
 /* subscription form container */
@@ -191,10 +227,30 @@ body {
         width: calc(100% - 6.5em);
     }
 
-    .--flex{
-        border: 1px solid blue;
+    .--flex {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+}
+
+/* width of 768px and up */
+@media screen and (min-width:48em) {
+    .container {
+        width: calc(100% - 9em);
+    }
+}
+
+/* width of 900px and up */
+@media screen and (min-width:56.25em) {
+    .container {
+        width: calc(100% - 35%);
+    }
+}
+
+/* width of 1024px and up */
+@media screen and (min-width:64em) {
+    .container {
+        width: calc(100% - 50%);
     }
 }
