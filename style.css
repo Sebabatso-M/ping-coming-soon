@@ -63,19 +63,29 @@ body {
 
 /* error text */
 .subscription__form--err::after {
-    content: 'Please provide a valid email address';
+    content: 'Please provide a valid email address'; /* when invalid email is given*/
     display: block;
     position: absolute;
-    top: 3rem;
-    left: 2rem;
+    top: 2.8rem;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 0.5625rem;
     font-style: italic;
     color: var(--lightRed);
 }
 
+/* error message  when an empty value has been given*/
+.--empty.subscription__form--err::after{
+    content: 'Whoops! It looks like you forgot to add your email';
+}
+
 .subscription__form--err .subscription__email {
-    margin-bottom: 2.25em;
+    margin-bottom: 3em;
     border-color: var(--lightRed);
+}
+
+.subscription__form--err .subscription__email:invalid{
+    border:5px solid green;
 }
 
 /* subscription form button */
@@ -126,6 +136,11 @@ body {
     .subscription__form--err::after {
         font-size: 0.6875rem;
     }
+
+    .subscription__form--err .subscription__email {
+        margin-bottom: 2.58em;
+    }
+
 }
 
 /* width of 600px and up */
@@ -149,6 +164,11 @@ body {
 
     .subscription__form--err .subscription__email {
         margin-bottom: 0;
+    }
+
+    .subscription__form--err::after {
+        left: 3em;
+        transform: translateX(0);
     }
 
 }
@@ -216,7 +236,7 @@ body {
 /* width of 320px and up*/
 @media screen and (min-width: 20em) {
     .container {
-        width: calc(100% - 5em);
+        width: calc(100% - 4.8em);
     }
 }
 
