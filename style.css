@@ -24,12 +24,12 @@ body {
     Typography
 =====================*/
 
-.fw-600 {
-    font-weight: 600;
+.fw-700 {
+    font-weight: 700;
 }
 
-.fw-500 {
-    font-weight: 500;
+.fw-600 {
+    font-weight: 600;
 }
 
 .color-d {
@@ -85,7 +85,8 @@ body {
 }
 
 .subscription__form--err .subscription__email:invalid{
-    border:5px solid green;
+    outline: none;
+    box-shadow: none;
 }
 
 /* subscription form button */

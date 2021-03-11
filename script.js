@@ -1,7 +1,9 @@
 const form = document.querySelector(".subscription__form");
 const email_input = document.querySelector(".subscription__email");
+const is_there_error = false;
 
 form.addEventListener("submit", (e) => {
+    
     if (!validate()) {
         e.preventDefault();
     } else {
@@ -15,6 +17,17 @@ email_input.addEventListener("input", (e) => {
     removeErrors();
 })
 
+email_input.addEventListener("change", () => {
+    const email = email_input.value.trim();
+    
+    if (!isEmail(email)) {
+        alertError();
+        is_there_error = true;
+    } else{
+        is_there_error = false;
+    }
+})
+
 function validate() {
     const email = email_input.value.trim();
 
@@ -24,9 +37,7 @@ function validate() {
         alertError();
         form.classList.add("--empty");
         return false;
-    } else if (!isEmail(email)) {
-        alertError();
-        alert('yeeps')
+    } else if (is_there_error) {
         return false;
     }
     return true;
@@ -38,6 +49,7 @@ function alertError() {
     email_input.setAttribute("placeholder", "example@email/com");
 }
 
+/* check if email is valid*/
 function isEmail(email) {
     const regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
